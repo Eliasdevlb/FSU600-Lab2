@@ -1,0 +1,219 @@
+/* Overall Body Styling */
+body[b-scn9hqgkc0] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fff; /* Adjusted for better contrast against dark background */
+    background-color: #1a1a1a; /* Darker background */
+}
+
+/* Base table styles */
+.table[b-scn9hqgkc0] {
+    width: 100%;
+    border-collapse: collapse; /* Use collapse to handle borders better */
+    background-color: #2c3e50; /* Adjusted to a darker shade */
+}
+
+    /* Table header styles */
+    .table thead th[b-scn9hqgkc0] {
+        background-color: #34495e; /* Slightly lighter shade for header */
+        color: white;
+        padding: 1em;
+        text-align: left;
+    }
+
+    /* Table body styles */
+    .table tbody td[b-scn9hqgkc0] {
+        padding: 1em;
+        text-align: left;
+        vertical-align: middle;
+        border-bottom: 1px solid #3f5765; /* Adjusted for subtle contrast */
+        color: #d1d1d1; /* Lighter text color for readability */
+    }
+
+/* Adjusted rounded corners for the table */
+.table[b-scn9hqgkc0] {
+    overflow: hidden; /* Ensures inner elements conform to the table's border radius */
+}
+
+    /* Hover effect for rows */
+    .table tbody tr:hover[b-scn9hqgkc0] {
+        background-color: #3d5464; /* Subtle hover state for rows */
+    }
+
+/* Button styles - adjusted for a more consistent and modern look */
+.btn[b-scn9hqgkc0] {
+    padding: 0.5em 1em;
+    margin-right: 0.3em;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-info[b-scn9hqgkc0] {
+    background-color: #5bc0de; /* Adjusted for a softer blue */
+}
+
+.btn-danger[b-scn9hqgkc0] {
+    background-color: #d9534f; /* Adjusted for a softer red */
+}
+
+.btn-info:hover[b-scn9hqgkc0], .btn-info:focus[b-scn9hqgkc0] {
+    background-color: #46b8da; /* Slightly darker on hover/focus */
+}
+
+.btn-danger:hover[b-scn9hqgkc0], .btn-danger:focus[b-scn9hqgkc0] {
+    background-color: #c9302c; /* Slightly darker on hover/focus */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .table thead[b-scn9hqgkc0] {
+        display: none;
+    }
+
+    .table[b-scn9hqgkc0], .table tbody[b-scn9hqgkc0], .table tr[b-scn9hqgkc0], .table td[b-scn9hqgkc0] {
+        display: block;
+        width: 100%;
+    }
+
+        .table tbody td[b-scn9hqgkc0] {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+
+            .table tbody td[b-scn9hqgkc0]::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 1em;
+                padding-right: 1em;
+                text-align: left;
+                font-weight: bold;
+                color: #d1d1d1;
+            }
+}
+
+/* Floating Action Button (FAB) Styling */
+.fab-container[b-scn9hqgkc0] {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1050;
+}
+
+.fab[b-scn9hqgkc0] {
+    background-color: #3078F0;
+    color: white;
+    border-radius: 50%;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .fab:hover[b-scn9hqgkc0] {
+        background-color: #205dcf;
+    }
+
+.fab-icon[b-scn9hqgkc0] {
+    font-size: 24px;
+}
+
+.modal[b-scn9hqgkc0] {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 1050; /* High enough to be on top */
+    background-color: rgba(0, 0, 0, 0.6); /* Dim the background */
+}
+
+.modal-content[b-scn9hqgkc0] {
+    position: relative; /* For absolute positioning of the close button */
+    background-color: #2c3e50; /* Dark background for contrast */
+    padding: 40px; /* Increased padding to account for the close button */
+    padding-top: 40px; /* Additional top padding for the close button */
+    border: 1px solid #4a5e70; /* Subtle border */
+    border-radius: 0.8em; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: auto;
+    max-width: 500px; /* Adjusted maximum width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    /* Centering Vertically for all browsers */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Close button styling */
+.close[b-scn9hqgkc0] {
+    color: #aaa;
+    position: absolute;
+    top: 10px; /* Position the close button a bit higher */
+    right: 10px; /* Position the close button a bit from the right */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover[b-scn9hqgkc0],
+    .close:focus[b-scn9hqgkc0] {
+        color: #ddd; /* Lighter gray color on hover/focus */
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+@media (min-height: 600px) {
+    .modal-content[b-scn9hqgkc0] {
+        max-height: 80%; /* Adjust this value as needed */
+    }
+}
+
+
+/* Style for form elements to make them visible */
+input[type="text"][b-scn9hqgkc0], select[b-scn9hqgkc0] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #333; /* Dark text for visibility */
+    background-color: #fff; /* White background */
+}
+
+/* Placeholder text color */
+input[b-scn9hqgkc0]::placeholder {
+    color: #888; /* Light grey for placeholders */
+}
+
+/* Button styling for better visibility */
+button[b-scn9hqgkc0] {
+    background-color: #4CAF50; /* Visible green background */
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Larger font size */
+}
+
+    button:hover[b-scn9hqgkc0] {
+        background-color: #45a049; /* Slightly darker green on hover */
+    }

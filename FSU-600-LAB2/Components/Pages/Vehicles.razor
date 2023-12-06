@@ -1,0 +1,130 @@
+@page "/Vehicles"
+@inject VehicleService VehicleService
+@inherits LayoutComponentBase
+@rendermode InteractiveServer
+@using FSU_600_LAB2.Models
+
+
+<div class="fab-container">
+    <button class="fab" @onclick="OpenModal">
+        <span class="fab-icon">+</span>
+    </button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Vehicle ID</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Status</th>
+            <th>Assigned Drivers</th> 
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in vehicles)
+        {
+            <tr>
+                <td>@vehicle.Id</td>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Model</td>
+                <td>@vehicle.Status</td>
+                <td>
+                    @foreach (var driver in vehicle.Drivers)
+                    {
+                        <span>@driver.Name</span><br>
+                    }
+                </td>
+                <td>
+                    <button class="btn btn-info" @onclick="() => EditVehicle(vehicle)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteVehicle(vehicle.Id)">Delete</button>
+                </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+@if (isModalOpen)
+{
+    <div class="modal" style="display: block;">
+        <div class="modal-content">
+            <span class="close" @onclick="CloseModal">&times;</span>
+            <form>
+                <label for="make">Make:</label>
+                <input id="make" type="text" @bind="selectedVehicle.Make" />
+
+                <label for="model">Model:</label>
+                <input id="model" type="text" @bind="selectedVehicle.Model" />
+
+                <label for="status">Status:</label>
+                <select id="status" @bind="selectedVehicle.Status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+
+
+
+                <button type="button" @onclick="HandleSave">Save</button>
+            </form>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Vehicle> vehicles;
+    private Vehicle selectedVehicle = new Vehicle();
+    private bool isModalOpen = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        vehicles = await VehicleService.GetAllVehiclesAsync();
+    }
+
+    private void OpenModal()
+    {
+        selectedVehicle = new Vehicle { Status = "Active" }; 
+        isModalOpen = true;
+    }
+
+    private void EditVehicle(Vehicle vehicle)
+    {
+        selectedVehicle = vehicle;
+        if (string.IsNullOrWhiteSpace(selectedVehicle.Status))
+        {
+            selectedVehicle.Status = "Active";
+        }
+        isModalOpen = true;
+    }
+
+
+    private void CloseModal()
+    {
+        isModalOpen = false;
+    }
+
+    private async Task HandleSave()
+    {
+        if (selectedVehicle.Id == 0)
+        {
+            selectedVehicle.Status = selectedVehicle.Status;
+
+            await VehicleService.AddVehicleAsync(selectedVehicle);
+        }
+        else 
+        {
+            await VehicleService.UpdateVehicleAsync(selectedVehicle);
+        }
+
+        vehicles = await VehicleService.GetAllVehiclesAsync();
+        CloseModal();
+
+    }
+
+
+    private async Task DeleteVehicle(int vehicleId)
+    {
+        await VehicleService.DeleteVehicleAsync(vehicleId);
+        vehicles = await VehicleService.GetAllVehiclesAsync(); 
+    }
+}

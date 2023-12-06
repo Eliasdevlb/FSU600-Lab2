@@ -1,0 +1,61 @@
+@page "/"
+@inject WeatherService WeatherService
+@inject DriverService DriverService
+@using FSU_600_LAB2.Models
+
+<table class="dashboard-table">
+    <thead>
+        <tr>
+            <th>Driver Name</th>
+            <th>Status</th>
+            <th>Location</th>
+            <th>Weather</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var driver in activeDrivers)
+        {
+            <tr>
+                <td>@driver.Name</td>
+                <td>@driver.Status</td>
+                <td>@driver.City</td>
+                <td>@GetWeatherInfo(driver.City)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Driver> activeDrivers;
+    private Dictionary<string, string> weatherInfo = new Dictionary<string, string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        activeDrivers = await DriverService.GetActiveDriversAsync();
+
+        foreach (var driver in activeDrivers)
+        {
+            if (!weatherInfo.ContainsKey(driver.City))
+            {
+                try
+                {
+                    var weather = await WeatherService.GetWeatherForCity(driver.City);
+                    weatherInfo[driver.City] = $"{weather.Main.Temperature}°C, {weather.Weather[0].Description}";
+                }
+                catch (Exception ex)
+                {
+                    weatherInfo[driver.City] = "Weather data not available"; 
+                }
+            }
+        }
+    }
+
+    private string GetWeatherInfo(string city)
+    {
+        if (weatherInfo.TryGetValue(city, out var info))
+        {
+            return info;
+        }
+        return "Loading...";
+    }
+}

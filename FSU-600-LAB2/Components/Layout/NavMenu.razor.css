@@ -1,0 +1,122 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.text-xl {
+    font-size: 1.25rem; 
+}
+
+
+@media (min-width: 768px) {
+    .text-xl {
+        font-size: 1.5rem; 
+    }
+}
+
+@media (max-width: 768px) {
+    .w-72.bg-gray-900 {
+        width: 100%; 
+    }
+
+    .fas.fa-bars.p-3 {
+        display: none; 
+    }
+}
+
+
+@media (min-width: 992px) {
+    .text-xl {
+        font-size: 1.75rem; 
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .text-xl {
+        font-size: 2rem; 
+    }
+}
+
+.collapsed-menu .menu-logo, .collapsed-menu .menu-text {
+    display: none; 
+}
+
+
+.collapsed-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    transition: width 0.3s ease-in-out;
+}
+
+.collapsed-menu .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 50px;
+}
+
+.collapsed-menu .menu-item i {
+    font-size: 20px; 
+    margin: 0 auto; 
+}
+
+.collapsed-menu button {
+    display: block; 
+    margin: 0 auto; 
+    padding: 0; 
+    width: auto; 
+}
+
+.collapsed-menu .menu-item span {
+    display: none; 
+}
+
+.menu-item {
+    position: relative;
+    padding: 15px 20px;
+    color: #b2b2b2; 
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    display: block; 
+}
+
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    border-left: 3px solid #007bff; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+
+
+.menu-item:hover, .menu-item.active {
+    color: #ffffff; 
+}
+
+
+.menu-item:hover::before {
+    opacity: 1; 
+}
+
+
+.menu-item.active::before {
+    border-left: 3px solid transparent; 
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.active {
+    color: #ffffff; 
+    font-weight: bold;
+    background-color: #0056b3; 
+}

@@ -1,0 +1,151 @@
+@page "/Drivers"
+@inject DriverService DriverService
+@inject VehicleService VehicleService
+@inherits LayoutComponentBase
+@rendermode InteractiveServer
+@using FSU_600_LAB2.Models
+
+<div class="fab-container">
+    <button class="fab" @onclick="OpenModal">
+        <span class="fab-icon">+</span>
+    </button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Driver Name</th>
+            <th>Assigned Vehicles</th>
+            <th>Status</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var driver in drivers)
+        {
+            <tr>
+                <td>@driver.Name</td>
+                <td>@string.Join(", ", driver.Vehicles.Select(v => v.Id))</td>
+                <td>@driver.Status</td>
+                <td>@driver.City</td>
+                <td>
+                    <button class="btn btn-info" @onclick="() => EditDriver(driver)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteDriver(driver.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (isModalOpen)
+{
+    <div class="modal" style="display: block;">
+        <div class="modal-content">
+            <span class="close" @onclick="CloseModal">&times;</span>
+            <form>
+                <label for="name">Name:</label>
+                <input id="name" type="text" @bind="selectedDriver.Name" />
+
+                <label for="status">Status:</label>
+                <select id="status" @bind="selectedDriver.Status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+
+                <label for="city">City:</label>
+                <input id="city" type="text" @bind="selectedDriver.City" />
+
+                <label for="vehicles">Vehicles:</label>
+                <select id="vehicles" multiple @onchange="HandleVehicleSelectionChanged">
+                    @foreach (var vehicle in allVehicles)
+                    {
+                        <option value="@vehicle.Id">@vehicle.Make @vehicle.Model</option>
+                    }
+                </select>
+
+                <button type="button" @onclick="HandleSave">Save</button>
+            </form>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Driver> drivers;
+    private List<Vehicle> allVehicles;
+    private Driver selectedDriver = new Driver();
+    private List<int> selectedVehicleIds = new List<int>(); // THERE IS AN ISSUE WITH THE RETURN TYPE OF THE FORM HERE, YOU NEED TO BE EXPECTING AN INT NOT A STRING OR MTM WILL NOT WORK
+    private bool isModalOpen = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        drivers = await DriverService.GetAllDriversAsync();
+        allVehicles = await VehicleService.GetAllVehiclesAsync();
+    }
+
+    private void OpenModal()
+    {
+        selectedDriver = new Driver { Status = "Active" };
+        selectedVehicleIds.Clear();
+        isModalOpen = true;
+    }
+
+    private void CloseModal()
+    {
+        isModalOpen = false;
+    }
+
+    private void EditDriver(Driver driver)
+    {
+        selectedDriver = driver;
+        selectedVehicleIds = driver.Vehicles.Select(v => v.Id).ToList(); 
+        isModalOpen = true;
+    }
+
+
+    private async Task HandleSave()
+    {
+        var vehiclesToAssign = allVehicles.Where(v => selectedVehicleIds.Contains(v.Id)).ToList();
+
+        if (selectedDriver.Id == 0) 
+        {
+            selectedDriver.Vehicles = vehiclesToAssign;
+            await DriverService.AddDriverAsync(selectedDriver);
+        }
+        else 
+        {
+            var driverToUpdate = await DriverService.GetDriverByIdAsync(selectedDriver.Id);
+            driverToUpdate.Vehicles.Clear();
+            foreach (var vehicle in vehiclesToAssign)
+            {
+                driverToUpdate.Vehicles.Add(vehicle);
+            }
+            await DriverService.UpdateDriverAsync(driverToUpdate);
+        }
+
+        drivers = await DriverService.GetAllDriversAsync();
+        CloseModal();
+    }
+
+
+    private async Task DeleteDriver(int driverId)
+    {
+        await DriverService.DeleteDriverAsync(driverId);
+        drivers = await DriverService.GetAllDriversAsync(); 
+    }
+
+    private void HandleVehicleSelectionChanged(ChangeEventArgs e)
+    {
+        var values = e.Value as IEnumerable<string>; 
+        if (values != null)
+        {
+            selectedVehicleIds = values.Select(int.Parse).ToList();
+        }
+        else
+        {
+            selectedVehicleIds = new List<int>();
+        }
+    }
+
+
+}

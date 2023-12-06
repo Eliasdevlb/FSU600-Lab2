@@ -1,0 +1,59 @@
+@inherits LayoutComponentBase
+@rendermode InteractiveServer
+
+
+<div class="@menuClass"> 
+    <div class="@menuHeaderClass"> 
+        <div class="flex items-center"> 
+            <img src="/images/favicon-32x32.png" alt="TAXI.SE logo" class="mr-4 menu-logo">
+            <span class="menu-title text-white font-bold text-xl menu-text">TAXI.SE</span>
+        </div>
+        <button @onclick="ToggleMenu" class="ml-4 text-gray-400 hover:text-blue-500 p-3 text-xl">
+            <i class="@hamburger"></i>
+        </button>
+    </div>
+    <div class="flex flex-col space-y-5 w-full">
+        <a href="/" class="menu-item text-gray-300 hover:text-blue-500 text-lg @(IsActive(1))" @onclick="() => SetActiveMenuItem(1)">
+            <i class="fas fa-tachometer-alt mr-2"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="Drivers" class="menu-item text-gray-300 hover:text-blue-500 text-lg @(IsActive(2))" @onclick="() => SetActiveMenuItem(2)">
+            <i class="fas fa-user mr-2"></i> 
+            <span>Drivers</span>
+        </a>
+        <a href="Vehicles" class="menu-item text-gray-300 hover:text-blue-500 text-lg @(IsActive(3))" @onclick="() => SetActiveMenuItem(3)">
+            <i class="fas fa-car mr-2"></i>
+            <span>Vehicles</span>
+        </a>
+    </div>
+</div>
+@code {
+    
+    private string menuClass = "w-50 bg-gray-900";     
+    private string menuHeaderClass = "flex items-center justify-between mb-12 p-3";
+    private string hamburger = "fas fa-bars p-3";     
+    private int activeMenuItem = 1; 
+    private void SetActiveMenuItem(int menuItem)
+    {
+        activeMenuItem = menuItem;
+        StateHasChanged();     }
+
+    private string IsActive(int menuItem)
+    {
+        return activeMenuItem == menuItem ? "active" : "";
+    }
+
+    private void ToggleMenu()
+    {
+        if (menuClass.Contains("collapsed-menu")){
+            menuClass = "w-72 bg-gray-900";             
+            menuHeaderClass = "flex items-center justify-between mb-12 p-3";
+        }   
+        else{
+            menuClass = "w-72 bg-gray-900 collapsed-menu";             
+            menuHeaderClass = "flex items-center justify-between mb-12";
+        }
+        
+        StateHasChanged();     }
+    
+}

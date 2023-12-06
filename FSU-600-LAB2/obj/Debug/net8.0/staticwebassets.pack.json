@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FSU-600-LAB2.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FSU-600-LAB2.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\favicon-128.png",
+      "PackagePath": "staticwebassets\\images\\favicon-128.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\images\\favicon-16x16.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\favicon-196x196.png",
+      "PackagePath": "staticwebassets\\images\\favicon-196x196.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\images\\favicon-32x32.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\favicon-96x96.png",
+      "PackagePath": "staticwebassets\\images\\favicon-96x96.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\mstile-144x144.png",
+      "PackagePath": "staticwebassets\\images\\mstile-144x144.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\mstile-150x150.png",
+      "PackagePath": "staticwebassets\\images\\mstile-150x150.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\mstile-310x150.png",
+      "PackagePath": "staticwebassets\\images\\mstile-310x150.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\mstile-310x310.png",
+      "PackagePath": "staticwebassets\\images\\mstile-310x310.png"
+    },
+    {
+      "Id": "C:\\Users\\R\\source\\repos\\FSU-600-LAB2\\FSU-600-LAB2\\wwwroot\\images\\mstile-70x70.png",
+      "PackagePath": "staticwebassets\\images\\mstile-70x70.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FSU-600-LAB2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FSU-600-LAB2.props",
+      "PackagePath": "build\\FSU-600-LAB2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FSU-600-LAB2.props",
+      "PackagePath": "buildMultiTargeting\\FSU-600-LAB2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FSU-600-LAB2.props",
+      "PackagePath": "buildTransitive\\FSU-600-LAB2.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
