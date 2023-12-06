@@ -8,7 +8,7 @@ body[b-d26z3iye7j] {
   }
 }
 
-/* Responsive font sizes */
+
 @media (max-width: 600px) {
     body[b-d26z3iye7j] {
         font-size: 14px;
@@ -21,27 +21,14 @@ body[b-d26z3iye7j] {
     }
 }
 
-/* Search input responsive adjustments */
-.search-input[b-d26z3iye7j] {
-    width: 100%; /* Full width on smaller screens */
-    margin-bottom: 1rem; /* Add some space below on smaller screens */
-}
 
-@media (min-width: 768px) {
-    .search-input[b-d26z3iye7j] {
-        width: auto; /* Auto width on larger screens */
-        margin-bottom: 0; /* No space below on larger screens */
-    }
-}
-
-/* Hide the username text on smaller screens */
 @media (max-width: 768px) {
     .username[b-d26z3iye7j] {
         display: none;
     }
 }
 
-/* Show the user icon only on smaller screens */
+
 @media (min-width: 768px) {
     .user-icon[b-d26z3iye7j] {
         display: none;

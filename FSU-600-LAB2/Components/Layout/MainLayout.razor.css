@@ -22,19 +22,6 @@ body {
 }
 
 
-.search-input {
-    width: 100%; 
-    margin-bottom: 1rem; 
-}
-
-@media (min-width: 768px) {
-    .search-input {
-        width: auto; 
-        margin-bottom: 0; 
-    }
-}
-
-
 @media (max-width: 768px) {
     .username {
         display: none;

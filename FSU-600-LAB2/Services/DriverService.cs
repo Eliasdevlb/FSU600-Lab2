@@ -48,7 +48,7 @@ public class DriverService
     {
         return await _context.Drivers
                              .Include(d => d.Vehicles)
-                             .Where(d => d.Status == "Active") // Assuming "Active" is the status for active drivers
+                             .Where(d => d.Status == "Active")
                              .ToListAsync();
     }
 

@@ -1,46 +1,46 @@
-/* navbar.css */
+
 body[b-xsotcrkazh] {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Default font size */
+
 .text-xl[b-xsotcrkazh] {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem; 
 }
 
-/* Medium devices (tablets, 768px and up) */
+
 @media (min-width: 768px) {
     .text-xl[b-xsotcrkazh] {
-        font-size: 1.5rem; /* 24px */
+        font-size: 1.5rem; 
     }
 }
 
 @media (max-width: 768px) {
     .w-72.bg-gray-900[b-xsotcrkazh] {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%; 
     }
 
     .fas.fa-bars.p-3[b-xsotcrkazh] {
-        display: none; /* Hide the hamburger button on smaller screens */
+        display: none; 
     }
 }
 
-/* Large devices (desktops, 992px and up) */
+
 @media (min-width: 992px) {
     .text-xl[b-xsotcrkazh] {
-        font-size: 1.75rem; /* 28px */
+        font-size: 1.75rem; 
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
+
 @media (min-width: 1200px) {
     .text-xl[b-xsotcrkazh] {
-        font-size: 2rem; /* 32px */
+        font-size: 2rem; 
     }
 }
 
 .collapsed-menu .menu-logo[b-xsotcrkazh], .collapsed-menu .menu-text[b-xsotcrkazh] {
-    display: none; /* Hide logo and text when menu is collapsed */
+    display: none; 
 }
 
 
@@ -56,67 +56,67 @@ body[b-xsotcrkazh] {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensure the items use the full width */
+    width: 100%; 
     height: 50px;
 }
 
 .collapsed-menu .menu-item i[b-xsotcrkazh] {
-    font-size: 20px; /* Icon size can be adjusted as needed */
-    margin: 0 auto; /* Center the icon inside the menu item */
+    font-size: 20px; 
+    margin: 0 auto; 
 }
-/* Style for the hamburger button */
+
 .collapsed-menu button[b-xsotcrkazh] {
-    display: block; /* Use block to fill the width */
-    margin: 0 auto; /* Auto margins for horizontal centering */
-    padding: 0; /* Remove padding if any */
-    width: auto; /* Allow the button to shrink to fit its content */
+    display: block; 
+    margin: 0 auto; 
+    padding: 0; 
+    width: auto; 
 }
 
 .collapsed-menu .menu-item span[b-xsotcrkazh] {
-    display: none; /* Hide the text labels in the collapsed state */
+    display: none; 
 }
 
 .menu-item[b-xsotcrkazh] {
     position: relative;
     padding: 15px 20px;
-    color: #b2b2b2; /* Grey color */
+    color: #b2b2b2; 
     transition: background-color 0.3s, color 0.3s;
     text-decoration: none;
-    display: block; /* Ensures the link takes up the full width available */
+    display: block; 
 }
 
-/* Full-width highlight with blue left border */
+
 .menu-item[b-xsotcrkazh]::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    border-left: 3px solid #007bff; /* Blue left border */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight for the background */
-    opacity: 0; /* Start fully transparent */
-    transition: opacity 0.3s; /* Smooth transition for the highlight */
+    width: 100%; 
+    height: 100%; 
+    border-left: 3px solid #007bff; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    opacity: 0; 
+    transition: opacity 0.3s; 
 }
 
-/* Change background and text color on hover or when active */
+
 .menu-item:hover[b-xsotcrkazh], .menu-item.active[b-xsotcrkazh] {
-    color: #ffffff; /* White color on hover/active */
+    color: #ffffff; 
 }
 
-/* Show the highlight on hover */
+
 .menu-item:hover[b-xsotcrkazh]::before {
-    opacity: 1; /* Full opacity to show the highlight */
+    opacity: 1; 
 }
 
-/* Specific styles for active menu item */
+
 .menu-item.active[b-xsotcrkazh]::before {
-    border-left: 3px solid transparent; /* Hide the blue bar by making it transparent */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight for the background if needed */
+    border-left: 3px solid transparent; 
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .active[b-xsotcrkazh] {
-    color: #ffffff; /* White text for active item */
+    color: #ffffff; 
     font-weight: bold;
-    background-color: #0056b3; /* Darker blue background for active item */
+    background-color: #0056b3; 
 }

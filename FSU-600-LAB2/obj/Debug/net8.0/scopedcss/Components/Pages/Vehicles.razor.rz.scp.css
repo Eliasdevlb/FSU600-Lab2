@@ -1,47 +1,47 @@
-/* Overall Body Styling */
+
 body[b-scn9hqgkc0] {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    color: #fff; /* Adjusted for better contrast against dark background */
-    background-color: #1a1a1a; /* Darker background */
+    color: #fff; 
+    background-color: #1a1a1a; 
 }
 
-/* Base table styles */
+
 .table[b-scn9hqgkc0] {
     width: 100%;
-    border-collapse: collapse; /* Use collapse to handle borders better */
-    background-color: #2c3e50; /* Adjusted to a darker shade */
+    border-collapse: collapse; 
+    background-color: #2c3e50; 
 }
 
-    /* Table header styles */
+    
     .table thead th[b-scn9hqgkc0] {
-        background-color: #34495e; /* Slightly lighter shade for header */
+        background-color: #34495e; 
         color: white;
         padding: 1em;
         text-align: left;
     }
 
-    /* Table body styles */
+    
     .table tbody td[b-scn9hqgkc0] {
         padding: 1em;
         text-align: left;
         vertical-align: middle;
-        border-bottom: 1px solid #3f5765; /* Adjusted for subtle contrast */
-        color: #d1d1d1; /* Lighter text color for readability */
+        border-bottom: 1px solid #3f5765; 
+        color: #d1d1d1; 
     }
 
-/* Adjusted rounded corners for the table */
+
 .table[b-scn9hqgkc0] {
-    overflow: hidden; /* Ensures inner elements conform to the table's border radius */
+    overflow: hidden; 
 }
 
-    /* Hover effect for rows */
+    
     .table tbody tr:hover[b-scn9hqgkc0] {
-        background-color: #3d5464; /* Subtle hover state for rows */
+        background-color: #3d5464; 
     }
 
-/* Button styles - adjusted for a more consistent and modern look */
+
 .btn[b-scn9hqgkc0] {
     padding: 0.5em 1em;
     margin-right: 0.3em;
@@ -53,22 +53,22 @@ body[b-scn9hqgkc0] {
 }
 
 .btn-info[b-scn9hqgkc0] {
-    background-color: #5bc0de; /* Adjusted for a softer blue */
+    background-color: #5bc0de; 
 }
 
 .btn-danger[b-scn9hqgkc0] {
-    background-color: #d9534f; /* Adjusted for a softer red */
+    background-color: #d9534f; 
 }
 
 .btn-info:hover[b-scn9hqgkc0], .btn-info:focus[b-scn9hqgkc0] {
-    background-color: #46b8da; /* Slightly darker on hover/focus */
+    background-color: #46b8da; 
 }
 
 .btn-danger:hover[b-scn9hqgkc0], .btn-danger:focus[b-scn9hqgkc0] {
-    background-color: #c9302c; /* Slightly darker on hover/focus */
+    background-color: #c9302c; 
 }
 
-/* Responsive adjustments */
+
 @media screen and (max-width: 768px) {
     .table thead[b-scn9hqgkc0] {
         display: none;
@@ -98,7 +98,7 @@ body[b-scn9hqgkc0] {
             }
 }
 
-/* Floating Action Button (FAB) Styling */
+
 .fab-container[b-scn9hqgkc0] {
     position: fixed;
     bottom: 2rem;
@@ -131,89 +131,89 @@ body[b-scn9hqgkc0] {
 
 .modal[b-scn9hqgkc0] {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center; 
+    justify-content: center; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    z-index: 1050; /* High enough to be on top */
-    background-color: rgba(0, 0, 0, 0.6); /* Dim the background */
+    z-index: 1050; 
+    background-color: rgba(0, 0, 0, 0.6); 
 }
 
 .modal-content[b-scn9hqgkc0] {
-    position: relative; /* For absolute positioning of the close button */
-    background-color: #2c3e50; /* Dark background for contrast */
-    padding: 40px; /* Increased padding to account for the close button */
-    padding-top: 40px; /* Additional top padding for the close button */
-    border: 1px solid #4a5e70; /* Subtle border */
-    border-radius: 0.8em; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    position: relative; 
+    background-color: #2c3e50; 
+    padding: 40px; 
+    padding-top: 40px; 
+    border: 1px solid #4a5e70; 
+    border-radius: 0.8em; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     width: auto;
-    max-width: 500px; /* Adjusted maximum width */
-    box-sizing: border-box; /* Include padding and border in the width */
-    /* Centering Vertically for all browsers */
+    max-width: 500px; 
+    box-sizing: border-box; 
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* Close button styling */
+
 .close[b-scn9hqgkc0] {
     color: #aaa;
     position: absolute;
-    top: 10px; /* Position the close button a bit higher */
-    right: 10px; /* Position the close button a bit from the right */
+    top: 10px; 
+    right: 10px; 
     font-size: 28px;
     font-weight: bold;
 }
 
     .close:hover[b-scn9hqgkc0],
     .close:focus[b-scn9hqgkc0] {
-        color: #ddd; /* Lighter gray color on hover/focus */
+        color: #ddd; 
         cursor: pointer;
         text-decoration: none;
     }
 
 @media (min-height: 600px) {
     .modal-content[b-scn9hqgkc0] {
-        max-height: 80%; /* Adjust this value as needed */
+        max-height: 80%; 
     }
 }
 
 
-/* Style for form elements to make them visible */
+
 input[type="text"][b-scn9hqgkc0], select[b-scn9hqgkc0] {
-    width: calc(100% - 20px); /* Full width minus padding */
+    width: calc(100% - 20px); 
     padding: 10px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    color: #333; /* Dark text for visibility */
-    background-color: #fff; /* White background */
+    color: #333; 
+    background-color: #fff; 
 }
 
-/* Placeholder text color */
+
 input[b-scn9hqgkc0]::placeholder {
-    color: #888; /* Light grey for placeholders */
+    color: #888; 
 }
 
-/* Button styling for better visibility */
+
 button[b-scn9hqgkc0] {
-    background-color: #4CAF50; /* Visible green background */
+    background-color: #4CAF50; 
     color: white;
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem; /* Larger font size */
+    font-size: 1rem; 
 }
 
     button:hover[b-scn9hqgkc0] {
-        background-color: #45a049; /* Slightly darker green on hover */
+        background-color: #45a049; 
     }
